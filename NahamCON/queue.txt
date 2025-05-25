@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFINITE QUEUE - World Tour 2025</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            color: #ff4081;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin: 10px 0 0;
+            color: #4fc3f7;
+            font-weight: 300;
+        }
+
+        .poster-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .poster {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            border: 2px solid #333;
+        }
+
+        .ticket-info {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .ticket-info h2 {
+            color: #4fc3f7;
+            font-size: 2rem;
+            margin-top: 0;
+        }
+
+        .ticket-info p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .buy-button {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .buy-button:hover {
+            background-color: #e91e63;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .buy-button:active {
+            transform: translateY(1px);
+        }
+
+        .tour-dates {
+            margin: 50px 0;
+        }
+
+        .tour-dates h2 {
+            color: #4fc3f7;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .dates-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .dates-table th,
+        .dates-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        .dates-table th {
+            color: #ff4081;
+            font-size: 1.1rem;
+        }
+
+        .band-info {
+            margin: 50px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .band-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .band-text h2 {
+            color: #4fc3f7;
+            font-size: 2rem;
+            margin-top: 0;
+        }
+
+        .band-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .band-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-button {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-button:hover {
+            background-color: #ff4081;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 1px solid #333;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>INFINITE QUEUE</h1>
+            <p class="subtitle">WORLD TOUR 2025</p>
+        </header>
+
+        <div class="poster-container">
+            <img src="/static/images/concert-poster.jpg" alt="INFINITE QUEUE Concert Poster" class="poster">
+        </div>
+
+        <div class="ticket-info">
+            <h2>TICKETS ON SALE NOW!</h2>
+            <p>Don't miss this once-in-a-lifetime experience with the hottest band on the planet!</p>
+            <button id="buy-tickets-btn" class="buy-button">BUY TICKETS</button>
+        </div>
+
+        <div class="band-text">
+            <h2>ABOUT THE TOUR</h2>
+            <p>The INFINITE QUEUE TOUR brings together the most electrifying musical acts of our time for an
+                unprecedented
+                global event! Five legendary bands, one unforgettable experience.</p>
+
+            <p>Headlined by Ben and the Nahomies with their chart-topping fusion of electronic rhythms and soulful
+                melodies,
+                alongside indie-rock sensations The STOKS, whose raw energy has captivated audiences worldwide. Johns
+                Who
+                Hammond joins with their genre-defying progressive sound, while The Haddix Project brings their
+                signature
+                orchestral arrangements to the mix. Completing this stellar lineup is Husky and the Hackettes, known for
+                their
+                groundbreaking visual performances and technical virtuosity.</p>
+
+            <p>After selling out stadiums across six continents, this collaborative tour features each band performing
+                their
+                greatest hits plus special cross-band collaborations you won't see anywhere else. The groundbreaking
+                production
+                includes immersive sound design, spectacular visual effects, and revolutionary stage technology.</p>
+
+            <p>Following the monumental success of the "Recursive Echoes" series, which spent 14 weeks at #1, this tour
+                promises
+                to be the must-see musical event of 2025. Each performance features a unique setlist and surprise guest
+                appearances, making every show a one-of-a-kind experience.</p>
+        </div>
+    </div>
+
+    <div class="tour-dates">
+        <h2>TOUR DATES</h2>
+        <table class="dates-table">
+            <tr>
+                <th>Date</th>
+                <th>City</th>
+                <th>Venue</th>
+            </tr>
+            <tr>
+                <td>May 15, 2025</td>
+                <td>New York, NY</td>
+                <td>Madison Square Garden</td>
+            </tr>
+            <tr>
+                <td>May 22, 2025</td>
+                <td>Los Angeles, CA</td>
+                <td>Crypto.com Arena</td>
+            </tr>
+            <tr>
+                <td>May 29, 2025</td>
+                <td>Chicago, IL</td>
+                <td>United Center</td>
+            </tr>
+            <tr>
+                <td>June 5, 2025</td>
+                <td>Toronto, ON</td>
+                <td>Scotiabank Arena</td>
+            </tr>
+            <tr>
+                <td>June 12, 2025</td>
+                <td>London, UK</td>
+                <td>O2 Arena</td>
+            </tr>
+            <tr>
+                <td>June 19, 2025</td>
+                <td>Paris, France</td>
+                <td>Accor Arena</td>
+            </tr>
+            <tr>
+                <td>June 26, 2025</td>
+                <td>Berlin, Germany</td>
+                <td>Mercedes-Benz Arena</td>
+            </tr>
+            <tr>
+                <td>July 3, 2025</td>
+                <td>Tokyo, Japan</td>
+                <td>Tokyo Dome</td>
+            </tr>
+            <tr>
+                <td>July 10, 2025</td>
+                <td>Sydney, Australia</td>
+                <td>Qudos Bank Arena</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="social-links">
+        <a href="#" class="social-button">f</a>
+        <a href="#" class="social-button">t</a>
+        <a href="#" class="social-button">i</a>
+        <a href="#" class="social-button">y</a>
+    </div>
+
+    <footer>
+        &copy; 2025 INFINITE QUEUE | All Rights Reserved | Why are you reading this?
+    </footer>
+    </div>
+
+    <script>
+        // Redirect to queue page when "Buy Tickets" is clicked
+        document.getElementById('buy-tickets-btn').addEventListener('click', function () {
+            window.location.href = '/queue';
+        });
+    </script>
+</body>
+
+</html>

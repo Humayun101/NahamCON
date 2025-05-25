@@ -1,0 +1,153 @@
+<!-- index.html -->
+<!-- layout.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoSequel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 2rem;
+            background-color: #f8f9fa;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .movie-card {
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .pre-code {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">No Sequel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/search">Search</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-3">
+        
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">NoSequel</h1>
+                <p class="card-text">No Sequels to be found here! I wonder why these incredible movies never got
+                    sequels...</p>
+            </div>
+            <a href="/search" class="btn btn-primary">Start Searching</a>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h2>Movie Database</h2>
+            </div>
+            <div class="card-body">
+                <p>Here are some movies in our database that never got a sequel:</p>
+                <div class="row">
+                    
+                    <div class="col-md-4">
+                        <div class="card movie-card">
+                            <div class="card-body">
+                                <h5 class="card-title">The Shawshank Redemption (1994)</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Directed by Frank Darabont</h6>
+                                <p class="card-text">Rating: 9.3/10</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card movie-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Pulp Fiction (1994)</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Directed by Quentin Tarantino</h6>
+                                <p class="card-text">Rating: 8.9/10</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card movie-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Inception (2010)</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Directed by Christopher Nolan</h6>
+                                <p class="card-text">Rating: 8.8/10</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card movie-card">
+                            <div class="card-body">
+                                <h5 class="card-title">The Truman Show (1998)</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Directed by Peter Weir</h6>
+                                <p class="card-text">Rating: 8.1/10</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card movie-card">
+                            <div class="card-body">
+                                <h5 class="card-title">E.T. the Extra-Terrestrial (1982)</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Directed by Steven Spielberg</h6>
+                                <p class="card-text">Rating: 7.8/10</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    <footer class="mt-5 py-3 text-center text-muted">
+        <div class="container">
+            <p>NoSequel</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

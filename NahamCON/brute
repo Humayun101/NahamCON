@@ -1,0 +1,18 @@
+#!/bin/bash
+
+wordlist="wordlist.txt"
+file="rotten.jpg"
+
+while IFS= read -r pass; do
+    echo "Trying passphrase: $pass"
+    # Try to extract without outputting files (-f) and overwrite without prompting (-p)
+    steghide extract -sf "$file" -p "$pass" -xf /dev/null &> /dev/null
+    if [ $? -eq 0 ]; then
+        echo "[+] Passphrase found: $pass"
+        # Extract the file with the found password
+        steghide extract -sf "$file" -p "$pass"
+        exit 0
+    fi
+done < "$wordlist"
+
+echo "[-] No passphrase found in the wordlist."

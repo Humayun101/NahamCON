@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkboxes</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .checkbox-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+            max-width: 800px;
+        }
+        .checkbox-wrapper input[type="checkbox"] {
+            width: 2.5rem;
+            height: 2.5rem;
+            appearance: none;
+            border: 2px solid #666;
+            border-radius: 4px;
+            background-color: #f0f0f0;
+            cursor: not-allowed;
+        }
+        .checkbox-wrapper input[type="checkbox"]:checked {
+            background-color: #4CAF50;
+            border-color: #45a049;
+        }
+        .link-container {
+            margin-top: 1rem;
+        }
+        .link-container a {
+            color: #666;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .link-container a:hover {
+            text-decoration: underline;
+        }
+        .flag-container {
+            display: none;
+        }
+        .flag-container h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="checkbox-container">
+                            <div class="checkbox-wrapper">
+                    <input type="checkbox" id="box_1" disabled>
+                </div>
+                            <div class="checkbox-wrapper">
+                    <input type="checkbox" id="box_2" disabled>
+                </div>
+                            <div class="checkbox-wrapper">
+                    <input type="checkbox" id="box_3" disabled>
+                </div>
+                            <div class="checkbox-wrapper">
+                    <input type="checkbox" id="box_4" disabled>
+                </div>
+                            <div class="checkbox-wrapper">
+                    <input type="checkbox" id="box_5" disabled>
+                </div>
+                            <div class="checkbox-wrapper">
+                    <input type="checkbox" id="box_6" disabled>
+                </div>
+                    </div>
+        <div class="link-container">
+            <a href="/interesting" target="_blank" rel="noopener noreferrer">checkout this page</a>
+        </div>
+    </div>
+    <div class="flag-container">
+        <h1></h1>
+    </div>
+
+    <script>
+        function updateCheckboxes() {
+            fetch('/poll')
+                .then(response => response.json())
+                .then(data => {
+                    // Check if all boxes are true and flag exists
+                    let allTrue = true;
+                    for (let i = 1; i <= 6; i++) {
+                        if (!data[`box_${i}`]) {
+                            allTrue = false;
+                            break;
+                        }
+                    }
+
+                    if (allTrue && data.flag) {
+                        // Hide main content and show flag
+                        document.querySelector('.main-content').style.display = 'none';
+                        document.querySelector('.flag-container').style.display = 'block';
+                        document.querySelector('.flag-container h1').textContent = data.flag;
+                    } else {
+                        // Update checkboxes (only the first 6)
+                        for (let i = 1; i <= 6; i++) {
+                            const checkbox = document.getElementById(`box_${i}`);
+                            if (checkbox) {
+                                checkbox.checked = data[`box_${i}`];
+                            }
+                        }
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Initial update
+        updateCheckboxes();
+
+        // Poll every 3 seconds
+        setInterval(updateCheckboxes, 3000);
+    </script>
+</body>
+</html> 
